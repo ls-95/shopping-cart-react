@@ -1,5 +1,5 @@
-import userEvent from "@testing-library/user-event";
 import { useState, useEffect } from "react";
+import "./Item.css";
 
 export default function Item() {
   const [products, setProducts] = useState([]);
@@ -23,11 +23,12 @@ export default function Item() {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div>
+    <div className="product-container">
       {products.map((product) => (
-        <div key={product.id}>
-          <h3>{product.title}</h3>
-          <p>{product.price}</p>
+        <div key={product.id} className="item">
+          <img src={product.image} className="image" />
+          <h3 className="title">{product.title}</h3>
+          <p className="price">{product.price}</p>
         </div>
       ))}
     </div>

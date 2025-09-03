@@ -1,0 +1,21 @@
+.navbar {
+  background-color: #257180;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  width: 100vw;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.shop-name {
+  color: #fff;
+  font-size: 24px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.link-styles {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+}
