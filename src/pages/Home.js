@@ -1,3 +1,5 @@
+import Item from "../components/Item";
+
 export default function Home() {
-  return <p>Home</p>;
+  return <Item />;
 }
