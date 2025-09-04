@@ -1,8 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faOtter, faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import Button from "./Button.js";
 import "./HeroSection.css";
 
-export default function HeroSection() {
+export default function HeroSection({ handleClick }) {
   return (
     <div className="hero-section-container">
       <div className="hero-section">
@@ -11,9 +12,11 @@ export default function HeroSection() {
         <p>
           Discover everyday essentials, curated with care — all in one place.
         </p>
-        <button>
-          Shop Now <FontAwesomeIcon icon={faArrowDown} />
-        </button>
+        <Button
+          onClick={handleClick}
+          children={"Shop Now"}
+          icon={<FontAwesomeIcon icon={faArrowDown} />}
+        />
       </div>
     </div>
   );

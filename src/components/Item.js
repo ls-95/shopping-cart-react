@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Item.css";
 
-export default function Item() {
+export default function Item({ ref }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -23,7 +23,7 @@ export default function Item() {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div className="product-container">
+    <div className="product-container" ref={ref}>
       {products.map((product) => (
         <div key={product.id} className="item">
           <img
