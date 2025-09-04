@@ -1,10 +1,78 @@
-.product-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+.container {
+  padding: 30px 30px 120px 30px;
+  border-bottom: 5px solid #000;
 }
 
-img {
+.container h2 {
+  text-align: center;
+  padding: 30px 0 120px 0;
+  font-size: 48px;
+  text-decoration: underline;
+  font-family: "Courier New", Courier, monospace;
+}
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 0 10px 20px 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.item:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.image-container {
   width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+
+.image-container .image {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 50%;
+  width: auto;
   height: auto;
+}
+
+.item .item-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 120px;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.item p {
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.item h3 {
+  font-size: 16px;
+}
+
+.item button {
+  font-size: 14px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

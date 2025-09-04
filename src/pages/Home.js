@@ -5,14 +5,14 @@ import "./Home.css";
 
 export default function Home() {
   const handleScroll = () => {
-    ref.current.scrollIntoView({ behavior: "smooth" });
+    itemRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  const ref = useRef(null);
+  const itemRef = useRef(null);
   return (
     <>
       <HeroSection handleScroll={handleScroll} />
-      <Item ref={ref} />
+      <Item innerRef={itemRef} />
     </>
   );
 }
