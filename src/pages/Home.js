@@ -4,14 +4,14 @@ import { useRef } from "react";
 import "./Home.css";
 
 export default function Home() {
-  const handleClick = () => {
+  const handleScroll = () => {
     ref.current.scrollIntoView({ behavior: "smooth" });
   };
 
   const ref = useRef(null);
   return (
     <>
-      <HeroSection handleClick={handleClick} />
+      <HeroSection handleScroll={handleScroll} />
       <Item ref={ref} />
     </>
   );
