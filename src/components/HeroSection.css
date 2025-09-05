@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-image: linear-gradient(120deg, #5ed0f9 0%, #b3f0fb 100%);
+  background-image: linear-gradient(120deg, #9fe6fb 0%, #e0faff 100%);
   border-bottom: 5px solid #000;
   display: flex;
   justify-content: center;
@@ -38,4 +38,8 @@
   margin: 20px auto 40px auto;
   line-height: 1.6;
   text-align: center;
+}
+
+.hero-section button {
+  margin-bottom: 20px;
 }

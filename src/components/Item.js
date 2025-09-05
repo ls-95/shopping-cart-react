@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./Item.css";
 import Button from "./Button";
 
-export default function Item({ innerRef }) {
+export default function Item({ innerRef, handleScrollToItems }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -44,6 +44,9 @@ export default function Item({ innerRef }) {
             <Button children={"Add To Cart"} />
           </div>
         ))}
+      </div>
+      <div className="back-to-top-button">
+        <Button children={"Back to top"} onClick={handleScrollToItems} />
       </div>
     </div>
   );

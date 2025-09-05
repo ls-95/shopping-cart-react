@@ -3,7 +3,10 @@ import { faOtter, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import Button from "./Button.js";
 import "./HeroSection.css";
 
-export default function HeroSection({ handleScroll }) {
+export default function HeroSection({
+  handleScrollToItems,
+  handleScrollToFooter,
+}) {
   return (
     <div className="hero-section-container">
       <div className="hero-section">
@@ -13,10 +16,11 @@ export default function HeroSection({ handleScroll }) {
           Discover everyday essentials, curated with care — all in one place.
         </p>
         <Button
-          onClick={handleScroll}
+          onClick={handleScrollToItems}
           children={"Shop Now"}
           icon={<FontAwesomeIcon icon={faArrowDown} />}
         />
+        <Button onClick={handleScrollToFooter} children={"Contact Us"} />
       </div>
     </div>
   );
