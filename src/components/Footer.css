@@ -1,0 +1,53 @@
+.footer {
+  width: 100vw;
+  background-color: #000;
+  color: #fff;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 60px 0 60px 0;
+  line-height: 1.5;
+}
+
+.first-column-section .footer-logo {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 32px;
+  padding-bottom: 30px;
+}
+
+.first-column-section .contact-information {
+  padding-bottom: 20px;
+}
+
+.second-column-section {
+  padding-right: 30px;
+}
+
+.second-column-section .icons {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.second-column-section .icons span {
+  padding-left: 20px;
+}
+
+.second-column-section .delivery {
+  padding-top: 20px;
+}
+
+.second-column-section .delivery .delivery-information {
+  padding: 10px 0;
+}
+
+@media screen and (max-width: 1460px) {
+  .footer-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
