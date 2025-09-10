@@ -7,14 +7,9 @@ import { useRef } from "react";
 import "./App.css";
 
 function App() {
-  const handleScrollToItems = () => {
-    itemRef.current.scrollIntoView({ behavior: "smooth" });
-  };
   const handleScrollToFooter = () => {
     footerRef.current.scrollIntoView({ behavior: "smooth" });
   };
-
-  const itemRef = useRef(null);
   const footerRef = useRef(null);
   return (
     <div className="App">
@@ -23,13 +18,7 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={
-              <Home
-                handleScrollToItems={handleScrollToItems}
-                handleScrollToFooter={handleScrollToFooter}
-                itemRef={itemRef}
-              />
-            }
+            element={<Home handleScrollToFooter={handleScrollToFooter} />}
           />
           <Route path="/cart" element={<Cart />} />
         </Routes>

@@ -28,7 +28,7 @@ export default function Item({ innerRef, handleScrollToItems }) {
       <h2>Shop</h2>
       <div className="product-container">
         {products.map((product) => (
-          <div key={product.id} className="item">
+          <div key={product.id} className="item" id={product.id}>
             <div className="image-container">
               <img
                 src={product.image}

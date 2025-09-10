@@ -1,0 +1,20 @@
+.cart-container {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.cart-container .inner-div {
+  padding: 60px 30px;
+}
+.cart-container h1 {
+  text-align: center;
+}
+
+.cart-container .cart-layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
