@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useCart } from "./CartContent";
 import "./Item.css";
 import Button from "./Button";
 
 export default function Item({ innerRef, handleScrollToItems }) {
+  const navigate = useNavigate();
+  const { addToCart } = useCart();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -19,6 +23,15 @@ export default function Item({ innerRef, handleScrollToItems }) {
         setLoading(false);
       });
   }, []);
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    console.log(product);
+  };
+
+  const handleNavigateToCart = () => {
+    navigate("/cart");
+  };
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
@@ -41,12 +54,20 @@ export default function Item({ innerRef, handleScrollToItems }) {
               <p className="price">${product.price}</p>
             </div>
             <div className="item-button-container"></div>
-            <Button children={"Add To Cart"} />
+            <Button
+              children={"Add To Cart"}
+              onClick={() => handleAddToCart(product)}
+            />
           </div>
         ))}
       </div>
-      <div className="back-to-top-button">
-        <Button children={"Back to top"} onClick={handleScrollToItems} />
+      <div className="items-button">
+        <span>
+          <Button children={"Back to top"} onClick={handleScrollToItems} />
+        </span>
+        <span>
+          <Button children={"View Cart"} onClick={handleNavigateToCart} />
+        </span>
       </div>
     </div>
   );
