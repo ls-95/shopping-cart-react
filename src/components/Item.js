@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useCart } from "./CartContent";
+import { useCart } from "./CartContext";
 import "./Item.css";
 import Button from "./Button";
 
@@ -10,6 +10,10 @@ export default function Item({ innerRef, handleScrollToItems }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { cartItems } = useCart();
+  useEffect(() => {
+    console.log("Cart Items Changed:", cartItems);
+  }, [cartItems]);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -26,7 +30,6 @@ export default function Item({ innerRef, handleScrollToItems }) {
 
   const handleAddToCart = (product) => {
     addToCart(product);
-    console.log(product);
   };
 
   const handleNavigateToCart = () => {
