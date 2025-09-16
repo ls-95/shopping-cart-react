@@ -1,8 +1,13 @@
 import "./Cart.css";
 import { useCart } from "../components/CartContext";
+import { useState } from "react";
+import CartCalculation from "../components/CartCalculation";
 
 export default function Cart() {
   const { cartItems } = useCart();
+  const [input, setInput] = useState("");
+  const [promo, setPromo] = useState("");
+
   return (
     <div className="cart-container">
       <div className="inner-div">
@@ -17,7 +22,7 @@ export default function Cart() {
                   className="image"
                 />
                 <h5 className="title">{items.title}</h5>
-                <p className="price">{items.price}</p>
+                <p className="price">{Math.round(items.price * 10)}kr</p>
               </div>
             ))}
           </div>
@@ -31,30 +36,23 @@ export default function Cart() {
                   id="promo-code"
                   name="promo-code"
                   className="promo-input"
+                  onChange={(e) => setInput(e.target.value)}
+                  value={input}
                 />
-                <button className="promo-button">Submit</button>
+                <button
+                  className="promo-button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    alert(`Promo Code: ${input} had been added`);
+                    setPromo(input);
+                    setInput("");
+                  }}
+                >
+                  Submit
+                </button>
               </div>
             </form>
-            <div className="calculation">
-              <p>
-                <span>Shipping: </span>
-                <span>TBD</span>
-              </p>
-              <p>
-                <span>Discount: </span>
-                <span>0</span>
-              </p>
-              <p>
-                <span>Tax: </span>
-                <span>TBD</span>
-              </p>
-              <p>
-                <span>
-                  <strong>Estimated Total: </strong>
-                </span>
-                <span>0</span>
-              </p>
-            </div>
+            <CartCalculation promo={promo} />
           </div>
         </div>
       </div>
