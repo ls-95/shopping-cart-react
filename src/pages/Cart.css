@@ -19,7 +19,7 @@
 
 .cart-container .cart-layout {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 2fr 1fr;
   padding-top: 10vh;
 }
 
@@ -52,24 +52,6 @@
 
 .cart-calculation {
   padding-left: 30px;
-}
-
-.promo-code-container {
-  display: flex;
-  flex-direction: row;
-}
-
-.promo-code-container .promo-input {
-  display: inline;
-}
-
-.promo-code-container .promo-button {
-  display: inline;
-}
-
-.calculation p {
-  display: flex;
-  justify-content: space-between;
 }
 
 @media only screen and (max-width: 992px) {

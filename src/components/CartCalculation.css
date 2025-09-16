@@ -1,0 +1,41 @@
+.cart-calculation {
+  padding: 20px;
+  line-height: 2;
+}
+
+.cart-calculation label {
+  font-weight: bold;
+}
+
+.cart-calculation input {
+  border: 1px solid #a9a9ac;
+  padding: 10px;
+  border-radius: 0.75rem;
+  width: 70%;
+  display: inline;
+}
+
+.cart-calculation .promo-button {
+  width: 30%;
+  display: inline;
+  background-color: black;
+  color: #fff;
+  border: 1px solid #000;
+  cursor: pointer;
+  border-radius: 0.75rem;
+  margin-left: 5px;
+}
+
+.calculation {
+  padding-top: 20px;
+}
+
+.calculation p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.promo-code-container {
+  display: flex;
+  flex-direction: row;
+}

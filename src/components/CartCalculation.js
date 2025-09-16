@@ -1,6 +1,39 @@
-export default function CartCalculation({ promo }) {
+import "./CartCalculation.css";
+import { useState } from "react";
+import Button from "./Button";
+
+export default function CartCalculation() {
+  const [input, setInput] = useState("");
+  const [promo, setPromo] = useState("");
   return (
-    <div>
+    <div className="cart-calculation">
+      <form>
+        <label htmlFor="promo-code">ENTER PROMO CODE:</label>
+        <div className="promo-code-container">
+          <input
+            type="text"
+            placeholder="Promo Code"
+            id="promo-code"
+            name="promo-code"
+            className="promo-input"
+            onChange={(e) => setInput(e.target.value)}
+            value={input}
+            autoComplete="off"
+          />
+          <button
+            type="submit"
+            className="promo-button"
+            onClick={(e) => {
+              e.preventDefault();
+              alert(`Promo Code: ${input} had been added`);
+              setPromo(input);
+              setInput("");
+            }}
+          >
+            Submit
+          </button>
+        </div>
+      </form>
       <div className="calculation">
         <p>
           <span>Shipping: </span>
@@ -20,6 +53,7 @@ export default function CartCalculation({ promo }) {
           </span>
           <span>0</span>
         </p>
+        <Button children={"Pay"} />
       </div>
     </div>
   );

@@ -34,6 +34,7 @@ export default function Item({ innerRef, handleScrollToItems }) {
 
   const handleNavigateToCart = () => {
     navigate("/cart");
+    window.scrollTo(0, 0);
   };
 
   if (loading) return <div>Loading...</div>;

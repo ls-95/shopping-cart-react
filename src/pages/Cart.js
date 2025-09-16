@@ -1,12 +1,9 @@
 import "./Cart.css";
 import { useCart } from "../components/CartContext";
-import { useState } from "react";
 import CartCalculation from "../components/CartCalculation";
 
 export default function Cart() {
   const { cartItems } = useCart();
-  const [input, setInput] = useState("");
-  const [promo, setPromo] = useState("");
 
   return (
     <div className="cart-container">
@@ -14,6 +11,7 @@ export default function Cart() {
         <h1 className="cart-title">My Cart</h1>
         <div className="cart-layout">
           <div className="cart-items">
+            {cartItems.length < 1 && <h3>Your cart is empty!</h3>}
             {cartItems.map((items) => (
               <div key={items.id} className="item-container" id="items.id">
                 <img
@@ -26,33 +24,8 @@ export default function Cart() {
               </div>
             ))}
           </div>
-          <div className="cart-calculation">
-            <form>
-              <label>Enter Promo Code</label>
-              <div className="promo-code-container">
-                <input
-                  type="text"
-                  placeholder="Promo Code"
-                  id="promo-code"
-                  name="promo-code"
-                  className="promo-input"
-                  onChange={(e) => setInput(e.target.value)}
-                  value={input}
-                />
-                <button
-                  className="promo-button"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    alert(`Promo Code: ${input} had been added`);
-                    setPromo(input);
-                    setInput("");
-                  }}
-                >
-                  Submit
-                </button>
-              </div>
-            </form>
-            <CartCalculation promo={promo} />
+          <div>
+            <CartCalculation />
           </div>
         </div>
       </div>
