@@ -15,17 +15,6 @@
   display: inline;
 }
 
-.cart-calculation .promo-button {
-  width: 30%;
-  display: inline;
-  background-color: black;
-  color: #fff;
-  border: 1px solid #000;
-  cursor: pointer;
-  border-radius: 0.75rem;
-  margin-left: 5px;
-}
-
 .calculation {
   padding-top: 20px;
 }

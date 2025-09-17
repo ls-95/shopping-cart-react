@@ -20,18 +20,16 @@ export default function CartCalculation() {
             value={input}
             autoComplete="off"
           />
-          <button
-            type="submit"
-            className="promo-button"
+          <Button
+            children={"Submit"}
+            style={{ width: "30%", fontSize: "0.75rem", padding: "6px 12px" }}
             onClick={(e) => {
               e.preventDefault();
               alert(`Promo Code: ${input} had been added`);
               setPromo(input);
               setInput("");
             }}
-          >
-            Submit
-          </button>
+          />
         </div>
       </form>
       <div className="calculation">
@@ -53,7 +51,7 @@ export default function CartCalculation() {
           </span>
           <span>0</span>
         </p>
-        <Button children={"Pay"} />
+        <Button children={"Pay"} style={{ width: "100%" }} />
       </div>
     </div>
   );
