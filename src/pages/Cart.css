@@ -27,15 +27,21 @@
   display: flex;
   flex-direction: row;
   gap: 15px;
-  align-items: flex-start;
   padding: 25px;
   border-bottom: 1px solid #eee;
 }
 
-.item-container img {
-  height: 100px;
-  width: auto;
-  max-width: 130px;
+.item-container .cart-image {
+  height: auto;
+  width: 10%;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.item-container .cart-information {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .item-container .title {
@@ -50,8 +56,18 @@
   color: #2563eb;
 }
 
-.cart-calculation {
-  padding-left: 30px;
+.cart-quantity-delete-button input {
+  width: 40px;
+  border: 1px solid #a9a9ac;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.cart-quantity-delete-button button {
+  width: 40px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 992px) {

@@ -5,6 +5,17 @@ import Button from "./Button";
 export default function CartCalculation() {
   const [input, setInput] = useState("");
   const [promo, setPromo] = useState("");
+
+  const handlePromoCode = (e) => {
+    e.preventDefault();
+    setPromo(input);
+    setInput("");
+    if (input.length === 0) {
+      alert("Please enter a promo code!");
+    } else {
+      alert(`Promo Code: ${input} had been added`);
+    }
+  };
   return (
     <div className="cart-calculation">
       <form>
@@ -22,13 +33,13 @@ export default function CartCalculation() {
           />
           <Button
             children={"Submit"}
-            style={{ width: "30%", fontSize: "0.75rem", padding: "6px 12px" }}
-            onClick={(e) => {
-              e.preventDefault();
-              alert(`Promo Code: ${input} had been added`);
-              setPromo(input);
-              setInput("");
+            style={{
+              width: "30%",
+              fontSize: "0.75rem",
+              padding: "6px 12px",
+              marginLeft: "5px",
             }}
+            onClick={handlePromoCode}
           />
         </div>
       </form>
@@ -51,7 +62,7 @@ export default function CartCalculation() {
           </span>
           <span>0</span>
         </p>
-        <Button children={"Pay"} style={{ width: "100%" }} />
+        <Button children={"Pay"} style={{ width: "100%", marginTop: "5px" }} />
       </div>
     </div>
   );

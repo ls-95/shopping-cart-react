@@ -8,6 +8,7 @@
   box-sizing: border-box;
   position: fixed;
   border-bottom: 2.5px solid #fff;
+  z-index: 10;
 }
 
 .shop-name {

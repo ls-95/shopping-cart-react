@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-image: linear-gradient(120deg, #9fe6fb 0%, #e0faff 100%);
+  background-image: linear-gradient(120deg, #f3e9dc 0%, #fdfbf8 100%);
   border-bottom: 5px solid #000;
   display: flex;
   justify-content: center;
@@ -23,6 +23,7 @@
   font-size: 72px;
   color: #5c3a21;
   filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.2));
+  z-index: 1;
 }
 
 .hero-section h1 {
