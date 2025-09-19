@@ -48,6 +48,9 @@
   flex: 1;
   word-wrap: break-word;
   margin: 0 0 5px 0;
+  padding-right: 20px;
+  font-size: 1rem;
+  font-weight: 200;
 }
 
 .item-container .price {
@@ -68,6 +71,17 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+  color: #6b7280;
+  transition: color 0.2s ease;
+}
+
+.cart-quantity-delete-button button:hover {
+  color: #ef4444;
+  transform: scale(1.1);
+}
+
+.cart-quantity-delete-button button:active {
+  transform: scale(0.95);
 }
 
 @media only screen and (max-width: 992px) {

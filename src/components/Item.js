@@ -10,10 +10,6 @@ export default function Item({ innerRef, handleScrollToItems }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { cartItems } = useCart();
-  // useEffect(() => {
-  //   console.log("Cart Items Changed:", cartItems);
-  // }, [cartItems]);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")

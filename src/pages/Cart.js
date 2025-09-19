@@ -23,7 +23,9 @@ export default function Cart() {
         <h1 className="cart-title">My Cart</h1>
         <div className="cart-layout">
           <div className="cart-items">
-            {cartItems.length < 1 && <h3>Your cart is empty!</h3>}
+            {cartItems.length < 1 && (
+              <h3 className="empty-cart-text">Your cart is empty!</h3>
+            )}
             {cartItems.map((item) => (
               <div key={item.id} className="item-container">
                 <img
