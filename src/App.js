@@ -6,6 +6,7 @@ import Footer from "./components/sections/Footer.js";
 import { CartProvider } from "./components/CartContext.js";
 import { useRef } from "react";
 import "./App.css";
+import Payment from "./pages/Payment.js";
 
 function App() {
   const handleScrollToFooter = () => {
@@ -23,6 +24,7 @@ function App() {
               element={<Home handleScrollToFooter={handleScrollToFooter} />}
             />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/payment" element={<Payment />} />
           </Routes>
           <Footer innerRef={footerRef} />
         </BrowserRouter>
