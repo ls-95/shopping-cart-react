@@ -29,3 +29,12 @@
   display: flex;
   flex-direction: row;
 }
+
+.selection-container select {
+  border: 1px solid #a9a9ac;
+  padding: 10px 10px 10px 6px;
+  border-radius: 0.75rem;
+  width: 100%;
+  margin-top: 5px;
+  font-family: inherit;
+}

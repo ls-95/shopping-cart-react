@@ -1,24 +1,22 @@
 import { useState } from "react";
 import Button from "./Button";
 
-export default function PromoCode({ promo, setPromo }) {
+export default function PromoCode({ setPromo }) {
   const [input, setInput] = useState("");
 
   const handlePromoCode = (e) => {
     e.preventDefault();
-    setPromo(input);
-    setInput("");
+
     if (input.length === 0) {
       alert("Please enter a promo code!");
       return;
-    } else {
-      setPromo(input);
-      setInput("");
-      alert(`Promo Code: ${input} had been added`);
     }
+    setPromo(input);
+    setInput("");
+    alert(`Promo Code: ${input} had been added`);
   };
   return (
-    <form>
+    <>
       <label htmlFor="promo-code">ENTER PROMO CODE:</label>
       <div className="promo-code-container">
         <input
@@ -43,6 +41,6 @@ export default function PromoCode({ promo, setPromo }) {
           onClick={handlePromoCode}
         />
       </div>
-    </form>
+    </>
   );
 }
