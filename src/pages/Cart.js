@@ -1,11 +1,16 @@
 import "./Cart.css";
 import { useCart } from "../components/CartContext";
 import CartCalculation from "../components/CartCalculation";
+import CartTotal from "../components/CartTotal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 export default function Cart() {
   const { cartItems, updateQuantity, removeFromCart } = useCart();
+
+  const totalPrice = cartItems.reduce((sum, item) => {
+    return sum + item.quantity * Math.round(item.price * 10);
+  }, 0);
 
   const handleQuantityChange = (itemId, newQuantity) => {
     if (newQuantity >= 1) {
@@ -43,12 +48,12 @@ export default function Cart() {
                         type="number"
                         name="quantity"
                         min={1}
-                        onChange={(e) =>
+                        onChange={(e) => {
                           handleQuantityChange(
                             item.id,
                             parseInt(e.target.value)
-                          )
-                        }
+                          );
+                        }}
                         value={item.quantity || 1}
                       />
                       <button
@@ -60,13 +65,16 @@ export default function Cart() {
                     </div>
                   </div>
 
-                  <p className="price">{Math.round(item.price * 10)}kr</p>
+                  <p className="price">
+                    {item.quantity * Math.round(item.price * 10)}kr
+                  </p>
                 </div>
               </div>
             ))}
+            <CartTotal totalPrice={totalPrice} />
           </div>
           <div>
-            <CartCalculation />
+            <CartCalculation totalPrice={totalPrice} />
           </div>
         </div>
       </div>

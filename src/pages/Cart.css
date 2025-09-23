@@ -56,14 +56,19 @@
 .item-container .price {
   flex-shrink: 0;
   font-weight: bold;
-  color: #2563eb;
 }
 
 .cart-quantity-delete-button input {
   width: 40px;
-  border: 1px solid #a9a9ac;
+  border: none;
   padding: 3px;
   border-radius: 3px;
+}
+
+.cart-quantity-delete-button input::-webkit-outer-spin-button,
+.cart-quantity-delete-button input::-webkit-inner-spin-button {
+  opacity: 0.5;
+  cursor: pointer;
 }
 
 .cart-quantity-delete-button button {

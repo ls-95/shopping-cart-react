@@ -1,0 +1,14 @@
+.cart-total-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+}
+
+.cart-total-container .total-text {
+  font-weight: bold;
+}
+
+.cart-total-container .total-price {
+  color: #2563eb;
+  font-weight: bold;
+}
