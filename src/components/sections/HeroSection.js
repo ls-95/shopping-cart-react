@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faOtter, faArrowDown } from "@fortawesome/free-solid-svg-icons";
-import Button from "./Button.js";
+import Button from "../Button.js";
 import "./HeroSection.css";
 
 export default function HeroSection({

@@ -3,7 +3,7 @@ import {
   FirstColumnText,
   SecondColumnText,
   SecondColumnIcons,
-} from "./Text/FooterText";
+} from "../Text/FooterText";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faOtter } from "@fortawesome/free-solid-svg-icons";
 import "./Footer.css";

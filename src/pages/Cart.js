@@ -2,7 +2,7 @@ import "./Cart.css";
 import { useCart } from "../components/CartContext";
 import CartItems from "../components/CartItems";
 import CartCalculation from "../components/CartCalculation";
-import CartTotal from "../components/CartTotal";
+import CartTotal from "../components/CartItemsTotal";
 
 export default function Cart() {
   const { cartItems } = useCart();
@@ -21,7 +21,7 @@ export default function Cart() {
             <CartTotal totalPrice={totalPrice} />
           </div>
           <div>
-            <CartCalculation />
+            <CartCalculation totalPrice={totalPrice} />
           </div>
         </div>
       </div>

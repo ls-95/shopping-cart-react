@@ -1,4 +1,4 @@
-import "./CartTotal.css";
+import "./CartItemsTotal.css";
 
 export default function CartTotal({ totalPrice }) {
   return (

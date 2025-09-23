@@ -3,9 +3,9 @@ import Button from "./Button";
 import PromoCode from "./PromoCode";
 import { useState } from "react";
 
-export default function CartCalculation() {
+export default function CartCalculation({ totalPrice }) {
   const [promo, setPromo] = useState("");
-
+  const total = totalPrice;
   return (
     <div className="cart-calculation">
       <PromoCode promo={promo} setPromo={setPromo} />
