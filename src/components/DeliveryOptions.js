@@ -3,7 +3,7 @@ import "./CartCalculation.css";
 
 export default function DeliveryOptions({ setDeliveryOption }) {
   let [selected, setSelected] = useState("");
-  let options = ["Standard Delivery - 49kr", "Home Delivery - 79kr"];
+  let options = ["Standard Delivery: 49kr", "Home Delivery: 79kr"];
 
   const handleDeliveryChange = (e) => {
     const selectedOption = e.target.value;

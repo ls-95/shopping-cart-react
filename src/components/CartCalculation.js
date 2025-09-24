@@ -24,14 +24,20 @@ export default function CartCalculation({ totalPrice }) {
         <div className="calculation">
           <p>
             <span>Shipping: </span>
-            <span>{deliveryOption === "" ? "TBD" : `${deliveryOption}kr`}</span>
+            <span>
+              {deliveryOption === ""
+                ? "TBD"
+                : totalPrice >= 800
+                ? "Free"
+                : `${deliveryOption}kr`}
+            </span>
           </p>
           <p>
             <span>Discount: </span>
             <span>{promo ? "-50kr" : "TBD"}</span>
           </p>
           <p>
-            <span>Tax: </span>
+            <span>Tax (included): </span>
             <span>25%</span>
           </p>
           <p>
@@ -39,7 +45,14 @@ export default function CartCalculation({ totalPrice }) {
               <strong>Estimated Total: </strong>
             </span>
             <span>
-              <TotalPrice />
+              <strong className="total-price">
+                <TotalPrice
+                  deliveryPrice={deliveryOption}
+                  totalPrice={totalPrice}
+                  promo={promo}
+                />
+                kr
+              </strong>
             </span>
           </p>
           <Button

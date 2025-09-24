@@ -25,6 +25,10 @@
   justify-content: space-between;
 }
 
+.calculation .total-price {
+  color: #2563eb;
+}
+
 .promo-code-container {
   display: flex;
   flex-direction: row;
