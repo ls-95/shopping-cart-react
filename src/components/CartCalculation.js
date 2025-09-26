@@ -20,7 +20,10 @@ export default function CartCalculation({ totalPrice }) {
     <form onSubmit={handlePayment} name="payment">
       <div className="cart-calculation">
         <PromoCode promo={promo} setPromo={setPromo} />
-        <DeliveryOptions setDeliveryOption={setDeliveryOption} />
+        <DeliveryOptions
+          setDeliveryOption={setDeliveryOption}
+          totalPrice={totalPrice}
+        />
         <div className="calculation">
           <p>
             <span>Shipping: </span>

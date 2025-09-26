@@ -13,7 +13,7 @@ export default function PromoCode({ setPromo }) {
     }
     setPromo(input);
     setInput("");
-    alert(`Promo Code: ${input} had been added`);
+    alert(`Promo Code: '${input}' had been added`);
   };
   return (
     <>
