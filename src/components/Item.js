@@ -51,6 +51,8 @@ export default function Item({ innerRef, handleScrollToItems }) {
             </div>
             <div className="item-information">
               <h3 className="title">{product.title}</h3>
+            </div>
+            <div>
               <p className="price">{Math.round(product.price * 10)}kr</p>
             </div>
             <div className="item-button-container"></div>
