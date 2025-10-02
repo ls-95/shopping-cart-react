@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import NavBar from "./components/sections/NavBar.js";
 import Home from "./pages/Home.js";
 import Cart from "./pages/Cart.js";
@@ -9,6 +9,14 @@ import "./App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faCheck } from "@fortawesome/free-solid-svg-icons";
 import Payment from "./pages/Payment.js";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 function App() {
   const [showPromoModal, setShowPromoModal] = useState(false);
@@ -49,6 +57,7 @@ function App() {
     <div className="App">
       <CartProvider>
         <BrowserRouter>
+          <ScrollToTop />
           <NavBar />
           <Routes>
             <Route
