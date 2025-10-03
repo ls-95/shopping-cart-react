@@ -20,6 +20,7 @@ export default function Cart() {
             <CartItems />
             <CartTotal totalPrice={totalPrice} />
           </div>
+          <hr />
           <div>
             <CartCalculation totalPrice={totalPrice} />
           </div>

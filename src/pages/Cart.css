@@ -54,7 +54,6 @@
   margin: 0 0 5px 0;
   padding-right: 20px;
   font-size: 1rem;
-  font-weight: 200;
 }
 
 .item-container .price {
@@ -91,6 +90,35 @@
 
 .cart-quantity-delete-button button:active {
   transform: scale(0.95);
+}
+
+.cart-layout hr {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .cart-container .cart-title {
+    font-size: 36px;
+    padding-bottom: 60px;
+  }
+
+  .cart-container .cart-layout {
+    grid-template-columns: 1fr;
+    padding-top: 0;
+  }
+
+  .cart-layout hr {
+    display: block;
+    width: 100%;
+    background-color: #000;
+    border: 1px solid #000;
+  }
+}
+
+@media (max-width: 768px) {
+  .empty-cart-text {
+    text-align: center;
+  }
 }
 
 @media only screen and (max-width: 992px) {

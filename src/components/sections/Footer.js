@@ -13,12 +13,7 @@ export default function Footer({ innerRef }) {
       <div className="footer-container">
         <div className="first-column-section">
           <div className="footer-logo">
-            <FontAwesomeIcon icon={faOtter} /> Otter Bay Co.
-          </div>
-          <div className="payement-icon-small-screen">
-            {SecondColumnIcons.map((icon, index) => {
-              return <span key={index}>{icon}</span>;
-            })}
+            <FontAwesomeIcon icon={faOtter} /> <span>Otter Bay Co.</span>
           </div>
           {FirstColumnText.map((first, index) => {
             return (
@@ -49,6 +44,11 @@ export default function Footer({ innerRef }) {
               );
             })}
           </div>
+        </div>
+        <div className="payement-icon-small-screen">
+          {SecondColumnIcons.map((icon, index) => {
+            return <span key={index}>{icon}</span>;
+          })}
         </div>
       </div>
       <hr />

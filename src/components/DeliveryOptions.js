@@ -28,7 +28,9 @@ export default function DeliveryOptions({ setDeliveryOption, totalPrice }) {
   return (
     <div className="selection-container">
       <select value={selected} onChange={handleDeliveryChange} required>
-        <option value="">Delivery...</option>
+        <option value="" disabled hidden>
+          Delivery...
+        </option>
         {options.map((option) => (
           <option key={option} value={option}>
             {option}

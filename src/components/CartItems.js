@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { useCart } from "./CartContext";
+import "../pages/Cart.css";
 
 export default function CartItems() {
   const { cartItems, updateQuantity, removeFromCart } = useCart();
@@ -27,7 +28,7 @@ export default function CartItems() {
           <div className="cart-information">
             <div className="cart-adjustments">
               <div className="cart-quantity">
-                <h5 className="title">{item.title}</h5>
+                <p className="title">{item.title}</p>
               </div>
               <div className="cart-quantity-delete-button">
                 <input

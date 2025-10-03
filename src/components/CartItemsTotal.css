@@ -1,7 +1,7 @@
 .cart-total-container {
   display: flex;
   justify-content: space-between;
-  padding: 25px;
+  padding: 25px 25px 70px 25px;
 }
 
 .cart-total-container .total-text {
@@ -10,4 +10,10 @@
 
 .cart-total-container .total-price {
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .cart-total-container {
+    padding: 25px;
+  }
 }
