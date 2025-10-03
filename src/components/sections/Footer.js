@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import {
   FirstColumnText,
   SecondColumnText,
@@ -9,12 +8,6 @@ import { faOtter } from "@fortawesome/free-solid-svg-icons";
 import "./Footer.css";
 
 export default function Footer({ innerRef }) {
-  const [width, setWidth] = useState(window.innerWidth);
-  useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
   return (
     <div ref={innerRef} className="footer" id="footer">
       <div className="footer-container">
@@ -22,14 +15,18 @@ export default function Footer({ innerRef }) {
           <div className="footer-logo">
             <FontAwesomeIcon icon={faOtter} /> Otter Bay Co.
           </div>
+          <div className="payement-icon-small-screen">
+            {SecondColumnIcons.map((icon, index) => {
+              return <span key={index}>{icon}</span>;
+            })}
+          </div>
           {FirstColumnText.map((first, index) => {
             return (
               <div key={index} className="contact-information">
-                <p>
+                <h3>
                   {first.icon} <strong>{first.title}</strong>
-                  <br />
-                  {first.text}
-                </p>
+                </h3>
+                <p>{first.text}</p>
               </div>
             );
           })}
@@ -53,7 +50,10 @@ export default function Footer({ innerRef }) {
             })}
           </div>
         </div>
-        <p>Screen width: {width}px</p>
+      </div>
+      <hr />
+      <div className="created-by">
+        Built with React by Laetitia Saunders © 2025
       </div>
     </div>
   );

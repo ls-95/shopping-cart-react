@@ -14,7 +14,7 @@ export default function Cart() {
   return (
     <div className="cart-container">
       <div className="inner-div">
-        <h1 className="cart-title">My Cart</h1>
+        <h2 className="cart-title">My Cart</h2>
         <div className="cart-layout">
           <div className="cart-items">
             <CartItems />

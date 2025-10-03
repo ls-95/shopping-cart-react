@@ -16,7 +16,8 @@ export default function NavBar() {
         </Link>
       </div>
       <div className="shop-name">
-        <FontAwesomeIcon icon={faOtter} /> Otter Bay Co.
+        <FontAwesomeIcon icon={faOtter} />{" "}
+        <span className="shop-name-text">Otter Bay Co.</span>
       </div>
       <div>
         <Link className={"link-styles"} to="/cart">
