@@ -5,3 +5,12 @@
   display: flex;
   justify-content: center;
 }
+
+.inner-payement-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.inner-payement-container input {
+  display: block;
+}
