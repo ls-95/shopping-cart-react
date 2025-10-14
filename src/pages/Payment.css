@@ -14,3 +14,9 @@
 .inner-payement-container input {
   display: block;
 }
+
+.payment-button-section {
+  text-align: center;
+  padding-top: 32px;
+  margin-bottom: 120px;
+}

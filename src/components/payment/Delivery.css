@@ -1,0 +1,97 @@
+.delivery-section,
+.contact-section {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-section {
+  margin-bottom: 30px;
+}
+
+.section-heading {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+  width: 100%;
+  padding: 20px 12px 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #1f2937;
+  background-color: white;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input-wrapper input:hover,
+.input-wrapper select:hover {
+  border-color: #9ca3af;
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+  border-color: #3b82f6;
+}
+
+.input-wrapper label {
+  position: absolute;
+  left: 12px;
+  top: 18px;
+  font-size: 16px;
+  color: #6b7280;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background-color: white;
+  padding: 0 4px;
+}
+
+.input-wrapper input:focus + label,
+.input-wrapper input:not(:placeholder-shown) + label,
+.input-wrapper select:focus + label,
+.input-wrapper select:not([value=""]) + label {
+  top: -8px;
+  font-size: 12px;
+  color: #374151;
+}
+
+.input-wrapper select + label {
+  top: -8px;
+  font-size: 12px;
+  color: #374151;
+}
+
+.name-row,
+.postal-city-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.input-wrapper select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236b7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+@media (max-width: 640px) {
+  .name-row,
+  .postal-city-row {
+    grid-template-columns: 1fr;
+  }
+}

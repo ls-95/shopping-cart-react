@@ -1,7 +1,7 @@
 import "./Payment.css";
-import Summary from "../components/payement/Summary";
-import Contact from "../components/payement/Contact";
-import Delivery from "../components/payement/Delivery";
+import Summary from "../components/payment/Summary";
+import Contact from "../components/payment/Contact";
+import Delivery from "../components/payment/Delivery";
 import Button from "../components/Button";
 
 export default function Payment() {
@@ -16,7 +16,13 @@ export default function Payment() {
         <form onSubmit={handleSubmit}>
           <Contact />
           <Delivery />
-          <Button children={"Pay"} type={"submit"} />
+          <div className="payment-button-section">
+            <Button
+              children={"Pay"}
+              type={"submit"}
+              style={{ width: "100%" }}
+            />
+          </div>
         </form>
       </div>
     </div>
