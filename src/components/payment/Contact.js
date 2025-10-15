@@ -15,6 +15,15 @@ export default function Contact() {
         />
         <label htmlFor="email">Email</label>
       </div>
+      <div className="newsletter">
+        <input
+          type="checkbox"
+          id="newsletter"
+          name="newsletter"
+          className="newsletter-checkbox"
+        />
+        <label htmlFor="newsletter">Email me with news and offers</label>
+      </div>
     </div>
   );
 }

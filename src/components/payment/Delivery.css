@@ -11,6 +11,18 @@
   margin-bottom: 30px;
 }
 
+.contact-section .newsletter {
+  display: flex;
+  flex-direction: row;
+}
+
+.contact-section .newsletter .newsletter-checkbox {
+  margin-right: 10px;
+  cursor: pointer;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
 .section-heading {
   font-size: 24px;
   font-weight: 600;
