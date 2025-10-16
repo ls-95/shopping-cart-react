@@ -6,7 +6,7 @@ import {
   faOtter,
   faHouse,
 } from "@fortawesome/free-solid-svg-icons";
-import { useCart } from "../CartContext";
+import { useCart } from "../Cart/CartContext";
 
 export default function NavBar() {
   const { totalQuantity } = useCart();

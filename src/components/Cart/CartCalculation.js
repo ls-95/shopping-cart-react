@@ -1,5 +1,5 @@
 import "./CartCalculation.css";
-import Button from "./Button";
+import Button from "../Button";
 import TotalPrice from "./TotalPrice";
 import DeliveryOptions from "./DeliveryOptions";
 import PromoCode from "./PromoCode";

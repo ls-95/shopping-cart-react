@@ -1,8 +1,8 @@
 import "./Cart.css";
-import { useCart } from "../components/CartContext";
-import CartItems from "../components/CartItems";
-import CartCalculation from "../components/CartCalculation";
-import CartTotal from "../components/CartItemsTotal";
+import { useCart } from "../components/Cart/CartContext";
+import CartItems from "../components/Cart/CartItems";
+import CartCalculation from "../components/Cart/CartCalculation";
+import CartTotal from "../components/Cart/CartItemsTotal";
 
 export default function Cart() {
   const { cartItems } = useCart();

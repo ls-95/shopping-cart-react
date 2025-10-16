@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { useCart } from "./CartContext";
-import "../pages/Cart.css";
+import "../../pages/Cart.css";
 
 export default function CartItems() {
   const { cartItems, updateQuantity, removeFromCart } = useCart();

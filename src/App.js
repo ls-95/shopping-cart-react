@@ -3,7 +3,7 @@ import NavBar from "./components/sections/NavBar.js";
 import Home from "./pages/Home.js";
 import Cart from "./pages/Cart.js";
 import Footer from "./components/sections/Footer.js";
-import { CartProvider } from "./components/CartContext.js";
+import { CartProvider } from "./components/Cart/CartContext.js";
 import { useRef, useState, useEffect } from "react";
 import "./App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
