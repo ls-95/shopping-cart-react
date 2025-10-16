@@ -42,8 +42,11 @@ function App() {
   };
 
   const handleGetDiscount = () => {
-    if (email.trim() !== "") {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (emailPattern.test(email)) {
       setPromoCode("WELCOME50");
+    } else {
+      alert("Please enter a valid email address");
     }
   };
 
