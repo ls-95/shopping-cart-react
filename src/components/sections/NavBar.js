@@ -6,8 +6,10 @@ import {
   faOtter,
   faHouse,
 } from "@fortawesome/free-solid-svg-icons";
+import { useCart } from "../CartContext";
 
 export default function NavBar() {
+  const { totalQuantity } = useCart();
   return (
     <nav className="navbar">
       <div>
@@ -22,6 +24,9 @@ export default function NavBar() {
       <div>
         <Link className={"link-styles"} to="/cart">
           <FontAwesomeIcon icon={faShoppingCart} /> Cart
+          {totalQuantity > 0 && (
+            <span className="cart-count">{totalQuantity}</span>
+          )}
         </Link>
       </div>
     </nav>

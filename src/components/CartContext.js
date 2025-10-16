@@ -7,6 +7,11 @@ export const useCart = () => useContext(CartContext);
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
+  const totalQuantity = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
   const addToCart = (item) => {
     const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
 
@@ -35,6 +40,7 @@ export const CartProvider = ({ children }) => {
       value={{
         cartItems,
         addToCart,
+        totalQuantity,
         removeFromCart,
         updateQuantity,
       }}
