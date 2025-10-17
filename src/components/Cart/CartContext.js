@@ -8,6 +8,8 @@ export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [selectedDelivery, setSelectedDelivery] = useState("");
   const [deliveryOption, setDeliveryOption] = useState("0");
+  const [total, setTotal] = useState(0);
+  const [promoCode, setPromoCode] = useState(false);
 
   const totalQuantity = cartItems.reduce(
     (total, item) => total + item.quantity,
@@ -49,6 +51,10 @@ export const CartProvider = ({ children }) => {
         setSelectedDelivery,
         deliveryOption,
         setDeliveryOption,
+        total,
+        setTotal,
+        promoCode,
+        setPromoCode,
       }}
     >
       {children}

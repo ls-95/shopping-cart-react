@@ -15,7 +15,6 @@ export default function CartCalculation({ totalPrice }) {
 
   const handlePayment = (e) => {
     e.preventDefault();
-    console.log(totalPrice);
     if (!totalPrice || totalPrice === 0) {
       alert(
         "You have no items in your cart, ADD SOME!! please 🙂 give me your fake doollars"

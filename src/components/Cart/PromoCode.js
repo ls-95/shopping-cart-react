@@ -1,11 +1,14 @@
 import { useState } from "react";
 import Button from "../Button";
 import "./CartCalculation.css";
+import { useCart } from "./CartContext";
 
 export default function PromoCode({ setPromo }) {
   const [input, setInput] = useState("");
   const [correctPromoCode, setCorrectPromoCode] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
+
+  const { setPromoCode } = useCart();
 
   const handlePromoCode = (e) => {
     e.preventDefault();
@@ -13,16 +16,19 @@ export default function PromoCode({ setPromo }) {
     if (input.length === 0) {
       alert("Please enter a promo code!");
       setCorrectPromoCode(false);
+      setPromoCode(false);
       setShowMessage(false);
       return;
     } else if (input === "WELCOME50") {
       setPromo(input);
       setInput("");
       setCorrectPromoCode(true);
+      setPromoCode(true);
       setTimeout(() => setShowMessage(true), 50);
     } else {
       alert("Please enter a valid promo code!");
       setCorrectPromoCode(false);
+      setPromoCode(false);
       setShowMessage(false);
       return;
     }
