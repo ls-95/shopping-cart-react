@@ -6,6 +6,8 @@ export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
+  const [selectedDelivery, setSelectedDelivery] = useState("");
+  const [deliveryOption, setDeliveryOption] = useState("0");
 
   const totalQuantity = cartItems.reduce(
     (total, item) => total + item.quantity,
@@ -43,6 +45,10 @@ export const CartProvider = ({ children }) => {
         totalQuantity,
         removeFromCart,
         updateQuantity,
+        selectedDelivery,
+        setSelectedDelivery,
+        deliveryOption,
+        setDeliveryOption,
       }}
     >
       {children}

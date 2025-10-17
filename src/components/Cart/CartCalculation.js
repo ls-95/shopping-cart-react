@@ -5,11 +5,13 @@ import DeliveryOptions from "./DeliveryOptions";
 import PromoCode from "./PromoCode";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "./CartContext";
 
 export default function CartCalculation({ totalPrice }) {
   const navigate = useNavigate();
   const [promo, setPromo] = useState("");
-  const [deliveryOption, setDeliveryOption] = useState("");
+
+  const { deliveryOption } = useCart();
 
   const handlePayment = (e) => {
     e.preventDefault();
@@ -28,10 +30,7 @@ export default function CartCalculation({ totalPrice }) {
     <form onSubmit={handlePayment} name="payment">
       <div className="cart-calculation">
         <PromoCode promo={promo} setPromo={setPromo} />
-        <DeliveryOptions
-          setDeliveryOption={setDeliveryOption}
-          totalPrice={totalPrice}
-        />
+        <DeliveryOptions totalPrice={totalPrice} />
         <div className="calculation">
           <p>
             <span>Shipping: </span>
