@@ -1,16 +1,23 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
 
 export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => {
+    const saved = localStorage.getItem("cartItems");
+    return saved ? JSON.parse(saved) : [];
+  });
   const [selectedDelivery, setSelectedDelivery] = useState("");
   const [deliveryOption, setDeliveryOption] = useState("0");
   const [total, setTotal] = useState(0);
   const [promoCode, setPromoCode] = useState(false);
   const [deliveryOptionWord, setDeliveryOptionWord] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const totalQuantity = cartItems.reduce(
     (total, item) => total + item.quantity,
