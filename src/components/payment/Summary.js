@@ -2,7 +2,9 @@ import { useCart } from "../Cart/CartContext";
 import "../../pages/Payment.css";
 
 export default function Summary() {
-  const { cartItems, deliveryOption, total, promoCode } = useCart();
+  const { cartItems, deliveryOption, total, promoCode, deliveryOptionWord } =
+    useCart();
+
   return (
     <div className="order-summary">
       <h3 className="section-heading">Order Summary</h3>
@@ -24,7 +26,11 @@ export default function Summary() {
         <div>
           <div className="order-summary-item">
             <p>Delivery Fee:</p>
-            <p>{deliveryOption === "0" ? "FREE" : `${deliveryOption}kr`}</p>
+            <p>
+              {deliveryOption === "0"
+                ? `${deliveryOptionWord} FREE`
+                : `${deliveryOptionWord} ${deliveryOption}kr`}
+            </p>
           </div>
           <div className="order-summary-item">
             <p>Discount:</p>
